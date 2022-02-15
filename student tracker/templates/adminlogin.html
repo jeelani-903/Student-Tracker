@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+</head>
+<body>
+   
+    <h1 >Admin Login</h1>
+    <div class="container">
+                <form class="form" method="post" action="#">
+                    <img class="image2" src={{url_for('static', filename = 'images/user1.png')}} >
+                  <p>{{status}}</p>
+                  <div class="user">
+                  <label>Reg.no/Roll.no</label><br />
+                  <input class="box" type="email" class="form-control" name="email" /><br />
+                </div>
+                <div class="pass">
+                  <label>Password</label><br />
+                  <input class="box1" type="password" class="form-control" name="password" /><br /><br />
+                </div>
+                <a class="submit" href="/admin portal" type="hidden">Login</a>
+                </form>
+
+    <style>
+        .container{
+            background-color: white;
+            border-radius: 20px;
+            border: 1px solid green ;
+            width: 30.2%;
+            height: 70%;
+            position: absolute;
+            left: 35%;
+            top: 30%;
+            font-size: 30px;
+        }
+
+        .submit{
+            font-size: 40px;
+            position: absolute;
+            top: 80%;
+            text-align: center;
+            width: 100%;
+            border-radius: 10px;
+          transition: 0.5s;
+          background-color: #4d5dfb;
+     background-image: linear-gradient(315deg, #4d5dfb 0%, #08c8f6 74%);
+
+            text-decoration: none;
+        }
+        .submit:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+
+        .box{
+            position: absolute;
+            height: 50px;
+            top: 50px;
+            width: 233%;
+            font-size: 30px;
+        }
+        .box1{
+            position: absolute;
+            height: 50px;
+            width: 372%;
+            font-size: 30px;
+        }
+
+        .pass{
+            position: absolute;
+            top: 60%;
+        }
+        
+        h1{
+            position: relative;
+            top: 30px;
+
+        }
+
+        .image1{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 100px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .user{
+            position: absolute;
+            top: 40%;
+        }
+
+        .image2{
+            width: 180px;
+            position: absolute;
+            left: 120px;
+        }
+
+    </style>
+</body>
+</html>
+
+<!-- <div class="row">
+    <div class="col-md-8">
+      
+    </div>
+    <div class="col-md-4">
+      <div class="card mt-100">
+        <div class="card-body"> -->
