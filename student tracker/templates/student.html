@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="student.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<title>Student Details</title>
+</head>
+<body>
+
+<style>
+body {
+  margin:0;
+  padding:10;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0.1%;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left:10px;
+  height: 115%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 40px 100px;
+  text-decoration: none;
+}
+
+.w3-container {
+    margin:40px;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  text-decoration: none;
+}
+
+button {
+	border-radius: 12px;
+	border: 1px solid #333;
+	background-color: #333;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+}
+    .times{
+        width: 100%;
+        text-align: center;
+        margin: 3;
+        padding: 0;
+     }
+
+     .times a{
+    text-decoration:none;
+    border-radius: 14px;
+	border: 1px solid black;
+	background-color: #ee2866;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 9px 30px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+
+ }
+ .center {
+  display: flex;
+  justify-content: center;
+  height:150px;
+  width:944px;
+  position:absolute;
+  top: 0px;
+  left:327px;
+  border: 2px solid white;
+  background:#696969;
+
+}
+
+.cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 50px;
+  left:590px;
+  }
+
+    li a.student {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.student) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+<style>
+  .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+   border-radius:14px;
+}
+
+.flip-card-inner {
+  position: absolute;
+  top:110px;
+  left:400px;
+  width: 100%;
+  height: 100%;
+  margin:10px;
+  text-align: center;
+  transition: transform 0.6s;
+   border-radius:14px;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+ border-radius:14px;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+   border-radius:14px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color:#ff6e7f;
+  color: white;
+  border-radius:14px;
+}
+
+.flip-card-back {
+  background-color: #CC95C0;
+  color: white;
+  transform: rotateY(180deg);
+   border-radius:14px;
+}
+
+/*SECOND PART*/
+  .flip-card1 {
+   border-radius:14px;
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner1 {
+  position: absolute;
+   border-radius:14px;
+  top:-190px;
+  left:830px;
+  width: 100%;
+  height: 100%;
+  margin:10px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover1 .flip-card-inner1 {
+  transform: rotateY(180deg);
+   border-radius:14px;
+}
+
+.flip-card-front1, .flip-card-back1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+   border-radius:14px;
+}
+
+.flip-card-front1 {
+ border-radius:14px;
+  background-color:#04AA6D;
+  color: white;
+  border-radius:14px;
+}
+
+.flip-card-back1 {
+ border-radius:14px;
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+h3 {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1.8em;
+  color: black;
+}
+h3:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h3:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}
+
+</style>
+
+<ul>
+   <li><a style="font-size: 18px;" class="active" href="/general"> <i class="fa fa-dashboard fa-2x"> </i> Dashboard</a></li>
+
+   <li><a style="font-size: 20px;" class="student" ><i class='fa fa-id-badge' ></i> Student</a></li>
+
+   <li><a style="font-size: 20px;" class="start" href="/start"><i class='fa fa-edit'></i> Test</a></li>
+
+   <li><a style="font-size: 20px;" class="result" href="/result"><i class='fa fa-file-text'></i> Result</a></li>
+
+    <li><a style="font-size: 20px;" class="result" href="/stucomp"><i class='fa fa-file-text'></i> Competition</a></li>
+
+   <li><a style="font-size: 20px;" class="report" href="/"><i class='fa fa-sign-out'></i> Log-out</a></li>
+</ul>
+
+
+
+<div style="margin-left:25%;padding:1px 16px;height:100px;" >
+</div>
+
+
+<div class="center"></div>
+<div class="cen">
+<h3 style="color:white" > ∾ • Student Tracker online Mcq Test.</h3>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h1 style="font-size:45px"><i class='fa fa-id-badge fa-4x' style='color:white'></i><br> Student.</h1>
+    </div>
+    <div class="flip-card-back">
+      <p style="font-size:25px">  <br>Student Name : Toby</p>
+      <p style="font-size:25px">Roll / Reg No :{{regno}}</p>
+      <p style="font-size:25px">DOB : 10 / 12 / 2002</p>
+      <p style="font-size:25px">Age : 19</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card1">
+  <div class="flip-card-inner1">
+    <div class="flip-card-front1">
+      <h1 style="font-size:42px"><i class='fa fa-question-circle-o fa-3x' style='color:white'></i> <br> Total Questions {{questions}} </h1>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+

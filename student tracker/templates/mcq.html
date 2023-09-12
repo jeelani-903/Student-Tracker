@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/student.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Mcq Test</title>
+
+</head>
+<body>
+<style>
+
+body {
+  margin:0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0.1%;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left:10px;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 20px 100px;
+  text-decoration: none;
+}
+
+.w3-container {
+    margin:30px;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+
+
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  text-decoration: none;
+ cursor:pointer;
+}
+
+/*THE END OF GENERAL DETAILS*/
+
+/* The MCQ PART (background) */
+
+
+.modal {
+  cursor:pointer;
+  border-radius:10px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 320px;
+  top:320;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  border-radius:10px;
+  position: fixed;
+  background-color: #fefefe;
+  width: 50%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  border-radius:14;
+  margin:10px;
+  padding: 2px 16px;
+  text-align:center;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.modal-body {
+margin:10px;
+padding: 20px 16px;
+}
+
+.modal-footer {
+  margin:10px;
+  padding: 10px 10px;
+  text-align:center;
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.times{
+        width: 100%;
+        text-align: center;
+        margin: 3;
+        padding: 0;
+     }
+
+    .times a{
+    text-decoration:none;
+    border-radius: 14px;
+	border: 1px solid black;
+	background-color: #ee2866;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 9px 30px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+
+ }
+
+</style>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Set a style for all buttons */
+button1 {
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button1:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 50px;
+  text-align: center;
+   position: relative;
+
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 80px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  position:relative;
+  top:29px;
+  left:10px;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+h2{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1.8em;
+  color: black;
+}
+h2:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h2:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}
+
+</style>
+
+<div class="scrollmenu">
+    <a style="font-size:30px"> ∾ • Student Tracker Mcq Test</a>
+   <a style="font-size:20px" href="/student"> ☶ Dashboard</a>
+
+  <button1 style="font-size:20px" onclick="document.getElementById('id01').style.display='block'">Exit</button1>
+
+<div id="id01" class="modal">
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Exit Test</h1>
+      <p>Are you sure you want to Exit Test?</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Exit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+    <a style="font-size:20px" id="myBtn"> ⚠ Guidelines</a>
+    <a style="font-size:20px" href="/"> ➲ Sign-out</a>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2> ∾ • Student Tracker Mcq Test</h2>
+    </div>
+    <div class="modal-body">
+      <p>Rule1: Some text in the Modal Body</p>
+      <p>Rule2: Some other text...</p>
+      <p>Rule3: Some other text...</p>
+      <p>Rule4: Some other text...</p>
+      <p>Rule5: Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3> ⚠ These guidelines must follow strictly.</h3>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</div>
+
+
+
+<form class="form" method="post" action="/mcq">
+  {% for i in range(length) %}
+  <div class="w3-container">
+    <h2>Question - {{i+1}}</h2>
+    <div class="w3-card-4">
+      <header class="w3-container w3-blue">
+        <h1>Topic - {{sub_topic_list[i]}}</h1>
+      </header> 
+      <div class="w3-container">
+        <p>{{questions_list[i]}}</p>
+          <input type="radio" id="John cena" name="{{i}}" value="1" required>
+          <label for="John cena">{{option1_list[i]}}</label><br>
+          <input type="radio" id="John McCarthy" name="{{i}}" value="2">
+          <label for="John McCarthy">{{option2_list[i]}}</label><br>
+          <input type="radio" id="Johnny porter" name="{{i}}" value="3">
+          <label for="Johnny porter">{{option3_list[i]}}</label>
+    <br>
+      </div>
+    
+    </div>
+  </div>
+  
+  {% endfor %}
+  
+    <p class="times">
+      <a><input type="submit" value="Submit"></a>
+       
+  </p>
+  </form>
+
+</body>
+</html>

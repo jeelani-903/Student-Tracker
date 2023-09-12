@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="student.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<title>Dashboard</title>
+
+</head>
+<body>
+<style>
+body {
+  margin:0;
+  padding:10;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0.1%;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left:10px;
+  height: 180%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 40px 100px;
+  text-decoration: none;
+}
+
+.w3-container {
+    margin:40px;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  text-decoration: none;
+}
+
+button {
+	border-radius: 12px;
+	border: 1px solid #333;
+	background-color: #333;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+}
+    .times{
+        width: 100%;
+        text-align: center;
+        margin: 3;
+        padding: 0;
+     }
+
+     .times a{
+    text-decoration:none;
+    border-radius: 14px;
+	border: 1px solid black;
+	background-color: #ee2866;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 9px 30px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+
+ }
+
+
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  height:150px;
+  width:944px;
+  position:absolute;
+  top: 0px;
+  left:327px;
+  border: 2px solid white;
+  background:#696969;
+
+}
+
+.centen{
+  display: flex;
+  justify-content: center;
+  height:220px;
+  width:944px;
+  position:absolute;
+  top: 863px;
+  left:325px;
+  border: 2px solid white;
+  background:#696969;
+}
+.cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 50px;
+  left:590px;
+  }
+
+  .bottom{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  color:white;
+  top: 950px;
+  left:493px;
+  font-size:20px;
+  }
+
+  .about{
+  display: flex;
+  justify-content: center;
+  height:714px;
+  font-size:20px;
+  width:932px;
+  position:absolute;
+  top: 149px;
+  left:350px;
+  border: 3px solid white;
+}
+h3 {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1.8em;
+  color: black;
+}
+h3:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h3:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}
+
+</style>
+
+<ul>
+  <li><a style="font-size: 18px;" class="active"> <i class="fa fa-dashboard fa-2x"> </i> Dashboard</a></li>
+
+  <li><a style="font-size: 20px;" class="teacher" href="/teacher"><i class='fa fa-address-book ' ></i> Teacher</a></li>
+
+  <li><a style="font-size: 20px;" class="student" href="/student"><i class='fa fa-id-badge' ></i> Student</a></li>
+
+  <li><a style="font-size: 20px;" class="statistics" href="/statistics"><i class='fa fa-newspaper-o' ></i> Stats</a></li>
+
+  <li><a style="font-size: 20px;" class="report" href="/"><i class='fa fa-sign-out'></i> Log-out</a></li>
+</ul>
+
+<div style="margin-left:25%;padding:1px 16px;height:100px;" >
+</div>
+
+
+
+<div class="center"></div>
+<div class="cen">
+<h3 style="color:white" > ∾ • Student Tracker online Mcq Test.</h3>
+</div>
+
+<div class="about">
+    <p>* We have received your registration for the Student Academic Program – Thank You .
+        <br>
+        <br>
+
+
+ * In order to ensure the full Datathon experience, participants must join the Academic Program.
+          <br>
+          <br>
+ *  If you are not already a member, you can sign up here.
+    Submissions are due no later than April 8, 2022.
+        <br>
+        <br>
+ * Important links::
+        <br>
+        <br>
+•	Toolkit (provides a downloadable kit with details about the challenge, submission instructions, presentation template).
+        <br>
+        <br>
+•	Datathon Discussion Group (sign in with your Qlik Account to post comments and questions about the Datathon and challenges, receive additional information, and more).
+       <br>
+       <br>
+* We thank you for joining Qlik and the United Nations to build solutions to address climate issues currently facing our planet!
+       <br>
+       <br>
+        <label>
+      <input type="checkbox" checked="checked" name="checkbox">confirmation required.
+             <br>
+             <br>
+            <a style="font-size: 20px;" class="student" href="/student"><i class='fa fa-check ' ></i> Accept</a>
+            - the terms and conditions required to attend the student tracker Mcq Test.
+    </label>
+</p><br>
+
+</div>
+
+<div class="centen"></div>
+<div class="bottom">
+    <h> Ⓒ Copyright 1999-2022 by ST Data. ® All Rights Reserved..
+        <br>
+        <br>
+           ∾ • Student Tracker Mcq System Test is Powered by ST 💗 .</h>
+</div>
+</body>
+</html>
+
+
+

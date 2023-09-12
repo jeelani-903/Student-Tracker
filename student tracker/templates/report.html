@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report</title>
+</head>
+<body>
+
+<style>
+/* Basic Styling */
+body {
+background: #02AAB0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #f2f2f2;
+}
+.container {
+  display: block;
+  text-align: center;
+}
+h3 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5em;
+  color: black;
+  left:460px;
+}
+h3:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h3:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}
+table {
+  width: 100%;
+  border-radius:6px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-radius:6px;
+}
+
+tr {
+background-color:white ;
+border-radius:6px;
+}
+</style>
+
+<h1>Student's Report Table</h1>
+<div style="overflow-x: auto;">
+  <table>
+    <tr>
+      <th>Serial No.</th>
+      <th>Student Name.</th>
+      <th>Roll/Reg No.</th>
+      <th>Date of Birth.</th>
+      <th>Overall Marks.</th>
+      <th>Marks scored in Academics.</th>
+      <th>Marks scored in Sports.</th>
+      <th>Marks scored in Co-Curricular.</th>
+      <th>Marks scored in Programming.</th>
+      <th>Student field of Interest.</th>
+      <th>Test Status.</th>
+    </tr>
+    {% for i in range(length) %}
+    <tr>
+      <td>{{i+1}}</td>
+      <td>Gustavo Green</td>
+      <td>{{register_number[i]}}</td>
+      <td>12/08/2000</td>
+      <td>{{score[i]}}</td>
+      <td>{{academic[i]}}</td>
+      <td>{{sport[i]}}</td>
+      <td>{{co_curricular[i]}}</td>
+      <td>{{programming[i]}}</td>
+      <td>{{interest[i]}}</td>
+      <td>{{status[i]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+      <h3> ∾ • Student Tracker online Mcq Test.</h3>
+</div>
+
+</body>
+</html>
+
+

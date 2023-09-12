@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="student.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<title>View Questions</title>
+</head>
+<body>
+<style>
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    min-width: 850px;
+    min-height:210px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position:absolute;
+    top: 200px;
+    left:420px;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+</style>
+
+<style>
+body {
+  margin:0;
+  padding:10;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0.1%;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: absolute;
+  left:10px;
+  height: 99%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 40px 100px;
+  text-decoration: none;
+}
+
+.w3-container {
+    margin:40px;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  text-decoration: none;
+}
+
+button {
+	border-radius: 12px;
+	border: 1px solid #333;
+	background-color: #333;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+}
+    .times{
+        width: 100%;
+        text-align: center;
+        margin: 3;
+        padding: 0;
+     }
+
+     .times a{
+    text-decoration:none;
+    border-radius: 14px;
+	border: 1px solid black;
+	background-color: #ee2866;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 9px 30px;
+	margin: 40px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+
+ }
+
+.cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 50px;
+  left:590px;
+  }
+
+li a.view {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.view) {
+  background-color: #555;
+  color: white;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  height:150px;
+  width:944px;
+  position:absolute;
+  top: 0px;
+  left:327px;
+  border: 2px solid white;
+  background:#696969;
+
+}
+h3 {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1.8em;
+  color: black;
+}
+h3:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h3:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}
+.assign{
+position:absolute;
+top:175px;
+left:380px;
+}
+
+</style>
+<style>
+.button {
+  background-color: #4CAF50;
+  border-radius:12px;
+  color: white;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position:absolute;
+  top:155px;
+  left:1090px;
+
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 4px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+</style>
+
+<ul>
+  <li><a style="font-size: 18px;" class="active" href="/general"> <i class="fa fa-dashboard fa-2x"> </i> Dashboard</a></li>
+
+  <li><a style="font-size: 20px;" class="teacher" href="/teacher"><i class='fa fa-address-book '></i> Teacher</a></li>
+
+  <li><a style="font-size: 20px;" class="view"><i class='fa fa-pencil-square-o' ></i> View Question </a></li>
+
+        <li><a style="font-size: 20px;" class="report" href="/comp"><i class="fa fa-award"></i> Competition</a></li>
+
+  <li><a style="font-size: 20px;" class="logout" href="/"><i class='fa fa-sign-out'></i> Log-out</a></li>
+</ul>
+
+<div style="margin-left:25%;padding:1px 16px;height:100px;" >
+</div>
+
+<div class="center"></div>
+<div class="cen">
+<h3 style="color:white" > ∾ • Student Tracker online Mcq Test.</h3>
+</div>
+
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Questions</th>
+            <th>Points</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+      <form method="post" action="/view">
+      {% for i in range(length) %}
+        <tr class="active-row">
+            <td>{{questions[i]}} </td>
+            <td>5M</td>
+            <td>
+              
+                <input type="hidden" name="index" value="{{i}}" >
+              <input type="submit" value="X">
+          </td>
+        </tr>
+      {% endfor %}
+        
+    </tbody>
+</table>
+<div class="assign">
+<label for="Assign to Which Standard">Choose which class to Assign :</label>
+<select id="Assign to Which Standard" name="class">
+
+     <option value="01">Class - I</option>
+     <option value="02">Class - II</option>
+     <option value="03">Class - III</option>
+     <option value="04">Class - IV</option>
+     <option value="05">Class - V</option>
+     <option value="06">Class - VI</option>
+     <option value="07">Class - VII</option>
+     <option value="08">Class - VIII</option>
+     <option value="09">Class - IX</option>
+     <option value="10">Class - X</option>
+     <option value="11">Class - XI</option>
+     <option value="12">Class - XII</option>
+
+</select>
+</div>
+<label type="hidden" name="option" value="update"></label>
+<input type="submit" class="button button1" value="Add Question">
+
+</form>
+</body>
+</html>
+
+
+
